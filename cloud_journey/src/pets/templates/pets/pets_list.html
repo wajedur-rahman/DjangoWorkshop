@@ -1,0 +1,12 @@
+
+#cloud_journey/src/pets/templates/pets/pet_list.html
+<ul>
+    {% for pet in object_list %}
+    <li>
+        <a href="{{ pet.get_absolute_url }}">{{ pet.title }}</a>
+        <a href="{% url 'update-pet' pet.id %}">Update</a>
+    </li>
+
+    {% endfor %}
+</ul>
+<a href="{% url 'add-pet' %}"><button>Add New Pet</button></a>
